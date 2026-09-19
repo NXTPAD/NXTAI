@@ -16,9 +16,9 @@ const starterPrompts = [
 ];
 
 const projects = [
-  { name: "NXT DEX", icon: "◇" },
-  { name: "NXT PAD", icon: "△" },
-  { name: "NXT CLOUD", icon: "☁" },
+  { name: "NXT DEX", icon: "◇", href: "https://github.com/NXTPAD/NXTDEX" },
+  { name: "NXT PAD", icon: "△", href: "https://nxtpad.nxtpadsupport.workers.dev/" },
+  { name: "NXT CLOUD", icon: "☁", href: "https://github.com/NXTPAD/NXTCLOUD" },
 ];
 
 function Icon({ children }) {
@@ -128,9 +128,9 @@ function App() {
         <div className="sidebar-section projects">
           <div className="section-label">NXT Ecosystem</div>
           {projects.map((project) => (
-            <button className="side-link" key={project.name}>
+            <a className="side-link" href={project.href} key={project.name}>
               <Icon>{project.icon}</Icon>{project.name}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -163,6 +163,12 @@ function App() {
             <span>NXT AI</span>
             <span className="status-dot" />
           </div>
+          <nav className="nxt-ecosystem" aria-label="NXT ecosystem">
+            <a href="https://github.com/NXTPAD/NXTCLOUD">CLOUD</a>
+            <a href="https://nxtpad.nxtpadsupport.workers.dev/">PAD</a>
+            <a href="https://github.com/NXTPAD/NXTDEX">DEX</a>
+            <a className="active" href="/">AI</a>
+          </nav>
           <div className="topbar-actions">
             <button className="topbar-button" title="Share">↗</button>
             <button className="topbar-button" title="More">•••</button>
