@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+const NXT_LOGO = "https://raw.githubusercontent.com/NXTPAD/NXTPAD/main/assets/img/ChatGPT%20Image%20Sep%2019%2C%202026%2C%2003_49_14%20PM.png";
+
 const models = [
   { id: "nxt-auto", name: "NXT Auto", detail: "Best model for the task" },
   { id: "nxt-reasoning", name: "NXT Reasoning", detail: "Complex reasoning & coding" },
@@ -107,7 +109,7 @@ function App() {
       <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-top">
           <button className="brand" onClick={startNewChat} aria-label="NXT AI home">
-            <span className="brand-mark">NXT</span>
+            <img className="brand-logo" src={NXT_LOGO} alt="NXT logo" />
             <span className="brand-name">AI</span>
           </button>
           <button className="new-chat" onClick={startNewChat}>
@@ -171,7 +173,7 @@ function App() {
           {messages.length === 0 ? (
             <div className="welcome">
               <div className="welcome-mark">
-                <span>NXT</span>
+                <img src={NXT_LOGO} alt="NXT logo" />
                 <b>AI</b>
               </div>
               <p className="eyebrow">INTELLIGENCE FOR THE NXT ECOSYSTEM</p>
@@ -196,7 +198,7 @@ function App() {
             <div className="messages">
               {messages.map((message, index) => (
                 <article className={`message-row ${message.role}`} key={index}>
-                  {message.role === "assistant" && <div className="message-avatar">NXT</div>}
+                  {message.role === "assistant" && <div className="message-avatar"><img src={NXT_LOGO} alt="NXT" /></div>}
                   <div className="message-content">
                     <div className="message-label">{message.role === "user" ? "You" : "NXT AI"}</div>
                     <div className="message-text">{message.text}</div>
