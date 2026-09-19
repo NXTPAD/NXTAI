@@ -155,3 +155,20 @@ button, textarea { border: 0; outline: 0; }
   .composer textarea{min-height:48px}
   .composer-note{display:none}
 }
+
+/* Unified NXT cloud logo + animated orbital rings */
+.brand-logo-wrap,.welcome-logo-wrap{position:relative;display:grid;place-items:center;overflow:visible}
+.brand-logo-wrap::before,.brand-logo-wrap::after,.welcome-logo-wrap::before,.welcome-logo-wrap::after{content:"";position:absolute;left:50%;top:50%;border:1px solid rgba(40,180,255,.72);border-radius:50%;pointer-events:none;box-shadow:0 0 12px rgba(0,150,255,.35)}
+.brand-logo-wrap{width:38px;height:38px}
+.brand-logo-wrap::before{width:54px;height:19px;transform:translate(-50%,-50%) rotate(-18deg);animation:nxtAiOrbit 7s linear infinite}
+.brand-logo-wrap::after{width:48px;height:16px;transform:translate(-50%,-50%) rotate(24deg);animation:nxtAiOrbitReverse 9s linear infinite}
+.brand-logo-wrap img{width:38px;height:38px;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 0 9px rgba(0,160,255,.5))}
+.welcome-logo-wrap{width:54px;height:54px}
+.welcome-logo-wrap::before{width:76px;height:28px;transform:translate(-50%,-50%) rotate(-18deg);animation:nxtAiOrbit 8s linear infinite}
+.welcome-logo-wrap::after{width:68px;height:23px;transform:translate(-50%,-50%) rotate(24deg);animation:nxtAiOrbitReverse 10s linear infinite}
+.welcome-logo-wrap img{width:54px;height:54px;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 0 13px rgba(0,160,255,.55))}
+.message-avatar{overflow:visible;position:relative}
+.message-avatar img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,160,255,.45))}
+@keyframes nxtAiOrbit{to{transform:translate(-50%,-50%) rotate(342deg)}}
+@keyframes nxtAiOrbitReverse{to{transform:translate(-50%,-50%) rotate(-336deg)}}
+@media(prefers-reduced-motion:reduce){.brand-logo-wrap::before,.brand-logo-wrap::after,.welcome-logo-wrap::before,.welcome-logo-wrap::after{animation:none}}
