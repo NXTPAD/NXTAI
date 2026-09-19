@@ -49,28 +49,44 @@ function App() {
     inputRef.current?.focus();
   }
 
-  function submitPrompt(prompt = input) {
+  async function submitPrompt(prompt = input) {
     const clean = prompt.trim();
     if (!clean || streaming) return;
-
-    setMessages((current) => [
-      ...current,
-      { role: "user", text: clean, files: attached.map((file) => file.name) },
-    ]);
-    setInput("");
-    setAttached([]);
-    setStreaming(true);
-
-    window.setTimeout(() => {
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          text: "NXT AI is ready. The interface is now connected to the NXT AI workspace, with model routing, files, tools, projects, and streaming response infrastructure prepared for the next backend integration.",
-        },
-      ]);
-      setStreaming(false);
-    }, 900);
+    const history = [...messages, { role: "user", text: clean }];
+    setMessages((current) => [...current, { role: "user", text: clean, files: attached.map((file) => file.name) }, { role: "assistant", text: "" }]);
+    setInput(""); setAttached([]); setStreaming(true);
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model, useWeb: toolsOpen, messages: history.map((item) => ({ role: item.role, content: item.text })) }),
+      });
+      if (!response.ok) throw new Error((await response.text()) || "AI service unavailable.");
+      if (!response.body) throw new Error("Streaming is not supported by this connection.");
+      const reader = response.body.getReader(), decoder = new TextDecoder();
+      let buffer = "", answer = "";
+      while (true) {
+        const { done, value } = await reader.read(); if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const chunks = buffer.split("\n\n"); buffer = chunks.pop() || "";
+        for (const chunk of chunks) {
+          const line = chunk.split("\n").find((item) => item.startsWith("data:"));
+          if (!line) continue;
+          const event = JSON.parse(line.slice(5).trim());
+          if (event.type === "delta") {
+            answer += event.text;
+            setMessages((current) => {
+              const next = [...current]; next[next.length - 1] = { ...next[next.length - 1], text: answer }; return next;
+            });
+          }
+          if (event.type === "error") throw new Error(event.message);
+        }
+      }
+    } catch (error) {
+      setMessages((current) => {
+        const next = [...current]; next[next.length - 1] = { ...next[next.length - 1], text: "NXT AI connection error: " + error.message }; return next;
+      });
+    } finally { setStreaming(false); }
   }
 
   function onKeyDown(event) {
