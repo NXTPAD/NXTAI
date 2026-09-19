@@ -1,0 +1,26 @@
+/* NXT Unified Ecosystem Theme — shared visual language */
+:root{--nxt-black:#020409;--nxt-ink:#060c15;--nxt-navy:#0b1626;--nxt-navy2:#102038;--nxt-line:#16283d;--nxt-line2:#24405c;--nxt-sky:#89cff0;--nxt-mist:#dcf1fc;--nxt-muted:#93a8bb;--nxt-blue:#1e9bff}
+body{background:radial-gradient(circle at 50% -10%,#0b1626 0%,#060c15 42%,#020409 78%);color:var(--nxt-mist)}
+.sidebar{background:rgba(2,4,9,.9);border-right-color:var(--nxt-line)}
+.topbar{background:rgba(2,4,9,.68);border-bottom-color:var(--nxt-line)}
+.side-link.active{color:#fff;background:rgba(137,207,240,.10)}
+.side-link.active .icon{color:var(--nxt-sky)}
+.new-chat{border-color:var(--nxt-line2);background:rgba(11,22,38,.65)}
+.new-chat:hover,.side-link:hover,.conversation:hover{background:rgba(137,207,240,.07)}
+.welcome-mark{border-color:var(--nxt-line2);background:linear-gradient(145deg,rgba(30,155,255,.16),rgba(11,22,38,.6));box-shadow:0 18px 55px rgba(0,0,0,.3)}
+.welcome-mark b,.starter-icon{color:var(--nxt-sky)}
+.status-dot,.model-pulse{background:var(--nxt-sky);box-shadow:0 0 12px rgba(137,207,240,.65)}
+.starter-card{border-color:var(--nxt-line);background:rgba(11,22,38,.32)}
+.starter-card:hover{border-color:rgba(137,207,240,.45);background:rgba(30,155,255,.07)}
+.starter-icon{background:rgba(137,207,240,.08)}
+.message-row.user .message-content{border-color:var(--nxt-line);background:rgba(11,22,38,.48)}
+.message-avatar{border-color:var(--nxt-line2);background:rgba(30,155,255,.10)}
+.composer{border-color:var(--nxt-line2);background:rgba(6,12,21,.94)}
+.tool-button:hover,.tool-button.selected,.model-button:hover{background:rgba(137,207,240,.07)}
+.model-menu,.tools-popover{border-color:var(--nxt-line2);background:#08111e}
+.model-menu button:hover,.model-menu button.chosen{background:rgba(137,207,240,.08)}
+.model-check,.tools-popover button span{color:var(--nxt-sky)}
+.send-button{background:var(--nxt-sky);color:#04121c}
+.send-button:hover:not(:disabled){background:#dcf1fc}
+.brand-logo{filter:drop-shadow(0 0 9px rgba(30,155,255,.45))}
+@media(max-width:760px){.sidebar{background:rgba(2,4,9,.97)}}
