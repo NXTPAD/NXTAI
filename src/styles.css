@@ -155,3 +155,9 @@ button, textarea { border: 0; outline: 0; }
   .composer textarea{min-height:48px}
   .composer-note{display:none}
 }
+
+/* Exact NXT master logo */
+.brand { align-items: center; }
+.brand-logo { width: 34px; height: 34px; object-fit: contain; flex: 0 0 34px; }
+.welcome-mark { overflow: hidden; }
+.welcome-logo { width: 48px; height: 48px; object-fit: contain; }
