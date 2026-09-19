@@ -27,3 +27,18 @@ body{background:radial-gradient(circle at 50% -10%,#0b1626 0%,#060c15 42%,#02040
 .send-button:hover:not(:disabled){background:#dcf1fc}
 .brand-logo{filter:drop-shadow(0 0 9px rgba(30,155,255,.45))}
 @media(max-width:760px){.sidebar{background:rgba(2,4,9,.97)}}
+
+/* NXT Ecosystem v2 */
+:root{--nxt-blue:#147cff;--nxt-blue2:#00c8ff;--nxt-cyan:#5ef3ff;--nxt-line:#1b3858;--nxt-line2:#326b99}
+body{background:radial-gradient(900px 520px at 50% -10%,rgba(0,136,255,.20),transparent 65%),radial-gradient(700px 500px at 100% 30%,rgba(0,214,255,.08),transparent 70%),#020306!important}
+.nxt-ecosystem{display:flex;align-items:center;gap:5px;margin-left:auto;margin-right:70px;padding:5px;border:1px solid rgba(72,150,255,.22);border-radius:999px;background:rgba(2,6,14,.72);box-shadow:0 8px 35px rgba(0,0,0,.25)}
+.nxt-ecosystem a{padding:8px 12px;border-radius:999px;color:#71849a;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.04em;transition:.2s}
+.nxt-ecosystem a:hover,.nxt-ecosystem a.active{color:#fff;background:linear-gradient(135deg,rgba(20,124,255,.24),rgba(0,200,255,.10));box-shadow:inset 0 0 0 1px rgba(94,243,255,.14)}
+.sidebar,.topbar{background:rgba(2,6,14,.82)!important;border-color:rgba(72,150,255,.18)!important;backdrop-filter:blur(18px)}
+.new-chat,.starter-card,.message-row.user .message-content,.composer{border-color:rgba(72,150,255,.24)!important}
+.new-chat:hover,.side-link:hover,.starter-card:hover{background:rgba(20,124,255,.08)!important}
+.starter-icon,.welcome-mark{color:#5ef3ff;border-color:rgba(94,243,255,.3)!important;background:linear-gradient(145deg,rgba(20,124,255,.18),rgba(0,200,255,.05))!important;box-shadow:0 0 45px rgba(20,124,255,.12)!important}
+.status-dot,.model-pulse{background:#5ef3ff!important;box-shadow:0 0 12px rgba(94,243,255,.65)!important}
+.send-button{background:linear-gradient(135deg,#147cff,#00c8ff)!important;color:#00121f!important;box-shadow:0 0 28px rgba(20,124,255,.25)!important}
+.brand-logo,.welcome-logo,.message-avatar img{filter:drop-shadow(0 0 12px rgba(0,170,255,.62))}
+@media(max-width:980px){.nxt-ecosystem{display:none}}
