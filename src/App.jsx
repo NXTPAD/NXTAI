@@ -107,7 +107,7 @@ function App() {
       <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-top">
           <button className="brand" onClick={startNewChat} aria-label="NXT AI home">
-            <span className="brand-mark">NXT</span>
+            <span className="brand-logo-wrap"><img src="/nxt-logo.svg" alt="" /></span>
             <span className="brand-name">AI</span>
           </button>
           <button className="new-chat" onClick={startNewChat}>
@@ -170,10 +170,7 @@ function App() {
         <section className={`chat-area ${messages.length ? "has-messages" : ""}`}>
           {messages.length === 0 ? (
             <div className="welcome">
-              <div className="welcome-mark">
-                <span>NXT</span>
-                <b>AI</b>
-              </div>
+              <div className="welcome-mark"><span className="welcome-logo-wrap"><img src="/nxt-logo.svg" alt="" /></span><b>AI</b></div>
               <p className="eyebrow">INTELLIGENCE FOR THE NXT ECOSYSTEM</p>
               <h1>How can I help?</h1>
               <p className="welcome-copy">
@@ -196,7 +193,7 @@ function App() {
             <div className="messages">
               {messages.map((message, index) => (
                 <article className={`message-row ${message.role}`} key={index}>
-                  {message.role === "assistant" && <div className="message-avatar">NXT</div>}
+                  {message.role === "assistant" && <div className="message-avatar"><img src="/nxt-logo.svg" alt="" /></div>}
                   <div className="message-content">
                     <div className="message-label">{message.role === "user" ? "You" : "NXT AI"}</div>
                     <div className="message-text">{message.text}</div>
