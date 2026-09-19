@@ -1,6 +1,9 @@
 /* NXT Unified Ecosystem Theme — shared visual language */
 :root{--nxt-black:#020409;--nxt-ink:#060c15;--nxt-navy:#0b1626;--nxt-navy2:#102038;--nxt-line:#16283d;--nxt-line2:#24405c;--nxt-sky:#89cff0;--nxt-mist:#dcf1fc;--nxt-muted:#93a8bb;--nxt-blue:#1e9bff}
 body{background:radial-gradient(circle at 50% -10%,#0b1626 0%,#060c15 42%,#020409 78%);color:var(--nxt-mist)}
+.app-shell{background:transparent;color:var(--nxt-mist)}
+.main{background:transparent}
+.chat-area{background:transparent}
 .sidebar{background:rgba(2,4,9,.9);border-right-color:var(--nxt-line)}
 .topbar{background:rgba(2,4,9,.68);border-bottom-color:var(--nxt-line)}
 .side-link.active{color:#fff;background:rgba(137,207,240,.10)}
