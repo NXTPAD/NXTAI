@@ -107,7 +107,7 @@ function App() {
       <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-top">
           <button className="brand" onClick={startNewChat} aria-label="NXT AI home">
-            <img className="brand-logo" src={NXT_LOGO} alt="" />
+            <span className="brand-mark">NXT</span>
             <span className="brand-name">AI</span>
           </button>
           <button className="new-chat" onClick={startNewChat}>
