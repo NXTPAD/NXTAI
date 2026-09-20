@@ -167,7 +167,7 @@ function App() {
             <a href="https://nxtcloudv31.nxtpadsupport.workers.dev/">CLOUD</a>
             <a href="https://nxtpad.nxtpadsupport.workers.dev/">PAD</a>
             <a href="https://nxtdex.nxtpadsupport.workers.dev/">DEX</a>
-            <a className="active" href="https://nxtai.nxtpadsupport.workers.dev/">AI</a>
+            <a className="active" href="https://nxt-ai.nxtpadsupport.workers.dev/">AI</a>
           </nav>
           <div className="topbar-actions">
             <button className="topbar-button" title="Share">↗</button>
